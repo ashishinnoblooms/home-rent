@@ -16,21 +16,33 @@ import {
   Grid,
   IconButton,
   Stack,
+  styled,
   TextField,
   Typography,
 } from "@mui/material";
 import Link from "next/link";
 import React from "react";
-import CopyrightIcon from '@mui/icons-material/Copyright';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 export default function Footer() {
+
+  const HoverTypography = styled(Typography)({
+    transition: 'letter-spacing 0.3s ease-in-out',
+    '&:hover': {
+      letterSpacing: '0.1em',
+    },
+    color: "rgba(255, 255, 255, 0.5)",
+    marginBottom:'8px',
+    display:"flex",
+    gap:"5px",
+    alignItems:"center"
+  });
+  
   return (
     <Container
       maxWidth="xl"
       sx={{
         backgroundColor: "#0E2E50",
-        minHeight: "50vh",
         paddingTop: 10,
         paddingInline: 2,
       }}
@@ -139,40 +151,40 @@ export default function Footer() {
           <Typography variant="h6" color="white" fontWeight="bolder" paddingBlock="15px">
             Quick Links
           </Typography>
-          <Link href={"www.google.com"}><Typography sx={{ color: "rgba(255, 255, 255, 0.5)", marginBottom:'8px'}} display="flex" gap="5px" alignItems="center">
-            <ChevronRightIcon/>About Us
-          </Typography></Link>
-          <Link href={"www.google.com"}><Typography sx={{ color: "rgba(255, 255, 255, 0.5)", marginBottom:'8px'}}display="flex" gap="5px" alignItems="center">
-          <ChevronRightIcon/>Contact Us
-          </Typography></Link>
-          <Link href={"www.google.com"}><Typography sx={{ color: "rgba(255, 255, 255, 0.5)", marginBottom:'8px'}}display="flex" gap="5px" alignItems="center">
-          <ChevronRightIcon/>Our Services
-          </Typography></Link>
-          <Link href={"www.google.com"}><Typography sx={{ color: "rgba(255, 255, 255, 0.5)", marginBottom:'8px'}}display="flex" gap="5px" alignItems="center">
-          <ChevronRightIcon/>Privacy Policy
-          </Typography></Link>
-          <Link href={"www.google.com"}><Typography sx={{ color: "rgba(255, 255, 255, 0.5)" }}display="flex" gap="5px" alignItems="center">
-          <ChevronRightIcon/>Terms & Conditions
-          </Typography></Link>
+          <HoverTypography >
+          <ChevronRightIcon/><Link href={"https://www.google.com/"} target="_blank">About Us</Link>
+          </HoverTypography>
+          <HoverTypography >
+          <ChevronRightIcon/><Link href={"https://www.google.com/"} target="_blank">Contact Us</Link>
+          </HoverTypography>
+          <HoverTypography >
+          <ChevronRightIcon/><Link href={"https://www.google.com/"} target="_blank">Our Services</Link>
+          </HoverTypography>
+          <HoverTypography >
+          <ChevronRightIcon/><Link href={"https://www.google.com/"} target="_blank">Privacy Policy</Link>
+          </HoverTypography>
+          <HoverTypography >
+          <ChevronRightIcon/><Link href={"https://www.google.com/"} target="_blank">Terms & Conditions</Link>
+          </HoverTypography>
         </Grid>
         <Grid size={{ xs: 12, md: 4 }}>
           <Typography variant="h6" color="white" fontWeight="bolder" paddingBlock="15px">
             Newsletter
           </Typography>
-          <Typography variant="body2" color="white" gutterBottom>
+          <Typography variant="body1" color="white" paddingBottom={2} gutterBottom >
               To get latest update subscribe to our updates
             </Typography>
-            <Box sx={{ position: 'relative', maxWidth: 400, border:'1px solid white', borderRadius:"8px" }}>
+            <Box sx={{ position: 'relative', maxWidth: 400, border:'1px solid #00B98E', borderRadius:"8px" }}>
               <TextField
                 fullWidth
                 placeholder="Your email"
                 variant="outlined"
                 size="small"
                 sx={{
-                  bgcolor: 'rgba(255,255,255,0.1)',
+                  bgcolor: 'transparent',
                   '& .MuiOutlinedInput-root': {
                     color: 'white ',
-                    padding:'8px 90px 8px 5px'
+                    padding:'6px 90px 6px 5px'
                   },
                 }}
               />
@@ -195,19 +207,19 @@ export default function Footer() {
             </Box>
         </Grid>
       </Grid>
-      <Divider sx={{ bgcolor: "primary.light", marginTop: 2 }} />
-      <Grid container paddingBlock={3} justifyContent="space-between" >
-        <Grid item xs={12} md={6}>
-        <Typography color="white" display="flex" gap="5px" alignItems="center">
-         <CopyrightIcon sx={{fontSize:"1.2rem"}}/><Link href="#">Homerent</Link>, All Right Reserved. Designed By <Link href="https://innoblooms.com/index.html" target="_blank">Innoblooms</Link> 
+      <Divider sx={{ bgcolor: "primary.light", marginTop: 3 }} />
+      <Grid container padding="35px 0" justifyContent={{xs:"center", md:"space-between"}} gap={{xs:2}} >
+        <Grid item xs={12} sm={6}>
+        <Typography color="white">
+        &#169;{" "}<Link href="#">Homerent</Link>, All Right Reserved. Designed By <Link href="https://innoblooms.com/index.html" target="_blank">Innoblooms</Link> 
         </Typography>
         </Grid>
-        <Grid item xs={12} md={6} >
-            <Box sx={{display:'flex', gap:"30px", marginLeft:"auto"}}>
-              <Typography color="white"><Link href="#"></Link>Home</Typography>
-              <Typography color="white"><Link href="#"></Link>Cookies</Typography>
-              <Typography color="white"><Link href="#"></Link>Help</Typography>
-              <Typography color="white"><Link href="#"></Link>FAQ</Typography>
+        <Grid item xs={12} sm={6} >
+            <Box sx={{display:'flex', gap:"30px",}}>
+              <Typography color="white"><Link href="#" target="_blank"></Link>Home</Typography>
+              <Typography color="white"><Link href="#" target="_blank"></Link>Cookies</Typography>
+              <Typography color="white"><Link href="#" target="_blank"></Link>Help</Typography>
+              <Typography color="white"><Link href="#" target="_blank"></Link>FAQ</Typography>
             </Box>
         </Grid>
       </Grid>
