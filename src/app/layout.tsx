@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-Inter',
 });
 
 export const metadata: Metadata = {
