@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Contact() {
   return (
-    <Container>
+    <Container maxWidth="xl" sx={{ backgroundColor:'white',}}>
       <ContactUs/>
     </Container>
   )

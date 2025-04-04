@@ -79,21 +79,3 @@ function Agent() {
 }
 
 export default Agent
-
-
-
-
-//  <Grid container sx={{ flexDirection: { xs: "column-reverse", md: "row" } }}>
-// <Grid item xs={12} md={6} sx={{ display: "flex", justifyContent: "center" }}>
-// {/* Replace with your actual image component */}
-// <Box component="img"
-//     src="your-image-source.jpg"
-//     alt="Agent"
-//     sx={{
-//         width: "100%",
-//         height: "auto",
-//         maxHeight: { md: "460px" },
-//         objectFit: "cover"
-//     }}
-// />
-// </Grid>
