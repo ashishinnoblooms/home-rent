@@ -13,23 +13,23 @@ function Navbar() {
     const navLink = ["HOME", "ABOUT", "PROPERTY", "CONTACT", "Enquery"];
     return (
         <>
-            <Box sx={{
+            <Box >
+
+                <Grid container spacing={1}sx={{
                 height: { xs: "auto", md: "90px" },
                 width: "100%",
-                maxWidth:{xs:"1300px",md: "1400px" },
+                // minWidth:{xs:"1300px",md: "1400px" },
                 // padding: { xs: "1px", md: "20px 25px 30px 25px" },
                 border: "1px",
                 borderRadius: "2px",
                 boxShadow: "0 0 6px gray",
                 bgcolor: "white",
-                margin: { md: "60px" },
+                // margin: { md: "60px" },
                 marginBottom: { xs: "40px", md: "80px" },
                 position: "fixed",
                 zIndex: "1",
             
             }}>
-
-                <Grid container spacing={1}>
                     <Grid size={{ xs: 6, md: 6 }} >
                         <Box sx={{ marginLeft: { xs: "20px", md: "40px" }, display: "flex", }}>
                             <Link href="./">
