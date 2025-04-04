@@ -138,11 +138,11 @@ export default function ContactUs() {
             name="name"
             placeholder="Enter Your Name"
             variant="outlined"
-            size="small"
+            size="medium"
             value={formData.name}
             onChange={(e: any) => handleChange(e)}
             label="Your Name"
-            fullWidth
+            fullWidth 
           />
         </Grid>
         <Grid size={{ xs: 12, sm: 6, md: 6 }}>
@@ -150,7 +150,7 @@ export default function ContactUs() {
             name="email"
             placeholder="Enter Your Email"
             variant="outlined"
-            size="small"
+            size="medium"
             value={formData.email}
             onChange={(e: any) => handleChange(e)}
             label="Your Email"
@@ -162,7 +162,7 @@ export default function ContactUs() {
             name="subjet"
             placeholder="Subject"
             variant="outlined"
-            size="small"
+            size="medium"
             value={formData.subject}
             onChange={(e: any) => handleChange(e)}
             label="Subject"
@@ -174,7 +174,7 @@ export default function ContactUs() {
             name="message"
             placeholder="Message"
             variant="outlined"
-            size="small"
+            size="medium"
             value={formData.message}
             onChange={(e: any) => handleChange(e)}
             label="Message"
@@ -187,12 +187,13 @@ export default function ContactUs() {
           <Button
             type="submit"
             variant="contained"
+            size="large"
             fullWidth
             sx={{
-              mt: 2,
-              mb: 2,
+              mt: 1,
+              mb: 1,
               backgroundColor: "#00b98e",
-              color: "#0E2E50",
+              color: "white",
               fontWeight: "bold",
             }}
           >
@@ -203,4 +204,27 @@ export default function ContactUs() {
     </Grid>
   );
 }
+
+// root: {
+//   '& label': {
+//     color: 'red',
+//   },
+//   '& label.Mui-focused': {
+//     color: 'white',
+//   },
+//   '& .MuiInput-underline:after': {
+//     borderBottomColor: 'yellow',
+//   },
+//   '& .MuiOutlinedInput-root': {
+//     '& fieldset': {
+//       borderColor: 'white',
+//     },
+//     '&:hover fieldset': {
+//       borderColor: 'white',
+//     },
+//     '&.Mui-focused fieldset': {
+//       borderColor: 'yellow',
+//     },
+//   },
+// },
 

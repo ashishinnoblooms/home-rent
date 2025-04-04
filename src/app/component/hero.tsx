@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-
 export default function Hero() {
   const [current, setCurrent] = React.useState(0);
 
@@ -27,15 +26,18 @@ export default function Hero() {
     setCurrent(current === 0 ? images.length - 1 : current - 1);
   }
   return (
-    <Grid container direction={{ xs: "column-reverse", md: "row" }} >
-      <Grid size={{ xs: 12, md: 6 }} justifyContent="center" alignContent="center">
-        <Box sx={{ padding:{ xs:"30px 20px", md:"40px"}, }}>
+    <Grid container direction={{ xs: "column-reverse", md: "row" }}>
+      <Grid
+        size={{ xs: 12, md: 6 }}
+        justifyContent="center"
+        alignContent="center"
+      >
+        <Box sx={{ padding: { xs: "30px 20px", md: "40px" } }}>
           <Typography
             variant="h1"
             color="var(--basic-font-color)"
             fontWeight="700"
-            fontSize=
-            // "3.5rem"
+            fontSize=// "3.5rem"
             "calc(1.1rem + 2.1vw)"
             mb={3}
           >
@@ -71,7 +73,11 @@ export default function Hero() {
       <Grid size={{ xs: 12, md: 6 }}>
         <Box sx={{ position: "relative" }}>
           <Button
-            sx={{position: "absolute", top: "42%", left: {xs:'30px',md:"-30px"} }}
+            sx={{
+              position: "absolute",
+              top: "42%",
+              left: { xs: "30px", md: "-30px" },
+            }}
             onClick={handleLeft}
           >
             <ChevronRightIcon
@@ -86,7 +92,11 @@ export default function Hero() {
             />
           </Button>
           <Button
-            sx={{position: "absolute", top: "55%", left: {xs:'30px',md:"-30px"} }}
+            sx={{
+              position: "absolute",
+              top: "55%",
+              left: { xs: "30px", md: "-30px" },
+            }}
             onClick={handleRight}
           >
             <ChevronRightIcon
@@ -111,7 +121,13 @@ export default function Hero() {
                     transition: "opacity 5s linear",
                   }}
                 >
-                  <Image src={img.src} alt={img.alt} width={740} height={500} layout="responsive"/>
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={740}
+                    height={500}
+                    layout="responsive"
+                  />
                 </Box>
               )
           )}
