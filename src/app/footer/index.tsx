@@ -102,7 +102,7 @@ export default function Footer() {
                   border: "1px solid rgba(255,255,255,0.5)",
                   "&:hover": {
                     background: "white",
-                    color: "#00B98E ",
+                    color: "#00b98e ",
                   },
                 }}
               >
@@ -114,7 +114,7 @@ export default function Footer() {
                   border: "1px solid rgba(255,255,255,0.5)",
                   "&:hover": {
                     background: "white",
-                    color: "#00B98E ",
+                    color: "#00b98e ",
                   },
                 }}
               >
@@ -126,7 +126,7 @@ export default function Footer() {
                   border: "1px solid rgba(255,255,255,0.5)",
                   "&:hover": {
                     background: "white",
-                    color: "#00B98E ",
+                    color: "#00b98e ",
                   },
                 }}
               >
@@ -138,7 +138,7 @@ export default function Footer() {
                   border: "1px solid rgba(255,255,255,0.5)",
                   "&:hover": {
                     background: "white",
-                    color: "#00B98E ",
+                    color: "#00b98e ",
                   },
                 }}
               >
@@ -174,7 +174,7 @@ export default function Footer() {
           <Typography variant="body1" color="white" paddingBottom={2} gutterBottom >
               To get latest update subscribe to our updates
             </Typography>
-            <Box sx={{ position: 'relative', maxWidth: 400, border:'1px solid #00B98E', borderRadius:"8px" }}>
+            <Box sx={{ position: 'relative', maxWidth: 400, border:'1px solid #00b98e', borderRadius:"8px" }}>
               <TextField
                 fullWidth
                 placeholder="Your email"
@@ -198,7 +198,7 @@ export default function Footer() {
                   padding:'3px 6px',
                   transform: 'translateY(-50%)',
                   color:'white',
-                  backgroundColor:'#00B98E ',
+                  backgroundColor:'#00b98e ',
                   fontSize:'1.1rem'
                 }}
               >

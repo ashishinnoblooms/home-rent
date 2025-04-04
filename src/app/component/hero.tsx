@@ -3,9 +3,7 @@ import { Grid, Typography, Button, Box } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { Heebo } from "next/font/google";
-// import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
-// import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+
 
 export default function Hero() {
   const [current, setCurrent] = React.useState(0);
@@ -30,18 +28,19 @@ export default function Hero() {
   }
   return (
     <Grid container direction={{ xs: "column-reverse", md: "row" }} >
-      <Grid size={{ xs: 12, md: 6 }}>
-        <Box sx={{ padding:{ xs:"30px 20px", md:"250px 40px"}, }}>
+      <Grid size={{ xs: 12, md: 6 }} justifyContent="center" alignContent="center">
+        <Box sx={{ padding:{ xs:"30px 20px", md:"40px"}, }}>
           <Typography
             variant="h1"
-            color="initial"
+            color="var(--basic-font-color)"
             fontWeight="700"
-            fontSize="3.5rem"
-            // "calc(1.425rem + 2.1vw)"
+            fontSize=
+            // "3.5rem"
+            "calc(1.1rem + 2.1vw)"
             mb={3}
           >
             Find A{" "}
-            <Box component="span" sx={{ display: "inline", color: "#00B98E" }}>
+            <Box component="span" sx={{ display: "inline", color: "#00b98e" }}>
               Perfect Home
             </Box>{" "}
             To Live With Your Family
@@ -62,7 +61,7 @@ export default function Hero() {
             sx={{
               padding: "1rem 3rem",
               fontSize: "1rem",
-              backgroundColor: "#00B98E",
+              backgroundColor: "#00b98e",
             }}
           >
             get started
@@ -79,7 +78,7 @@ export default function Hero() {
               sx={{
                 width: "50px",
                 height: "50px",
-                backgroundColor: "#00B98E",
+                backgroundColor: "#00b98e",
                 borderRadius: "50%",
                 fontSize: "3rem",
                 color: "white",
@@ -96,7 +95,7 @@ export default function Hero() {
                 color: "white",
                 width: "50px",
                 height: "50px",
-                backgroundColor: "#00B98E",
+                backgroundColor: "#00b98e",
                 borderRadius: "50%",
               }}
             />
