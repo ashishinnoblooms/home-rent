@@ -9,7 +9,7 @@ import Image from 'next/image';
 function Agent() {
     return (
         <>
-            <Box sx={{ height: { xs: "auto", md: "500px" }, width: { xs: "95%", md: "90%", lg: "1500px" }, padding: { xs: "15px", md: "20px 25px 30px 25px" }, border: "1px", borderRadius: "9px", bgcolor: "#EFFDF5", margin: "auto", marginBottom: { xs: "40px", md: "80px" } }}>
+            <Box sx={{ height: { xs: "auto", md: "500px" }, width: { xs: "95%", md: "90%", lg: "1500px" }, padding: { xs: "15px", md: "20px 25px 30px 25px" }, border: "1px", borderRadius: "9px", bgcolor: "#EFFDF5", margin: "auto", marginBottom: { xs: "40px", md: "50px" } }}>
                 <Box sx={{ height: { xs: "auto", md: "460px" }, width: { xs: "100%", md: "calc(100% - 40px)", lg: "1460px" }, border: "1px dashed green", borderRadius: "2px", bgcolor: "white", margin: "auto" }}>
 
                     <Grid container>

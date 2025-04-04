@@ -1,14 +1,9 @@
-import propertyList from "./component/propertyList";
-import PropertyList from "./component/propertyList";
-import Client from "./component/Client";
-import Agent from "./component/Agent";
+import { Container } from "@mui/material";
+import Dashboard from "./dashboard";
 
 export default function Home() {
   return (
-    <div>
-      <PropertyList/>
-      <Client/>
-      <Agent/>
-    </div>
+      <Dashboard/>
+      
   );
 }
