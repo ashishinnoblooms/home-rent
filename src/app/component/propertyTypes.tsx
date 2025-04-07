@@ -15,7 +15,7 @@ export default function PropertyTypes() {
       <Grid size={12} textAlign="center">
         <Typography
           variant="h2"
-           color="var(--basic-font-color)"
+          color="var(--basic-font-color)"
           fontWeight={700}
           fontSize="calc(1.1rem + 2.1vw)"
           padding="30px 0 10px"
@@ -57,35 +57,32 @@ export default function PropertyTypes() {
             },
           }}
         >
-            <Box
-              sx={{
-                borderRadius: "50%",
-                width: 90,
-                height: 90,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "white",
-                border:'2px dotted #00b98e',
-                padding:2,
-                mb: 1,
-              }}
-            >
-              <Image
-                src={property.logo}
-                alt={property.alt}
-                width={50}
-                height={50}
-                style={{ objectFit: "contain" }}
-              />
-            </Box>
-            <Typography variant="subtitle1" color="initial">
-              {property.name}
-            </Typography>
-            <Typography
-              variant="h6">
-              {property.count} Properties
-            </Typography>
+          <Box
+            sx={{
+              borderRadius: "50%",
+              width: 90,
+              height: 90,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "white",
+              border: "2px dotted #00b98e",
+              padding: 2,
+              mb: 1,
+            }}
+          >
+            <Image
+              src={property.logo}
+              alt={property.alt}
+              width={50}
+              height={50}
+              style={{ objectFit: "contain" }}
+            />
+          </Box>
+          <Typography variant="subtitle1" color="initial">
+            {property.name}
+          </Typography>
+          <Typography variant="h6">{property.count} Properties</Typography>
         </Grid>
       ))}
     </Grid>
