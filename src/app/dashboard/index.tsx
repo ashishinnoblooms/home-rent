@@ -6,6 +6,7 @@ import PropertyList from '../component/propertyList'
 import Agent from '../component/Agent'
 import Client from '../component/Client'
 import About from '../component/about'
+import Property from '../component/Property'
 
 
 
@@ -16,6 +17,7 @@ export default function Dashboard() {
       <PropertyList/>
       <PropertyTypes/>
       <About/>
+      <Property/>
       <Agent/>
       <Client/>
     </Container>

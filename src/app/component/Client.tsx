@@ -9,8 +9,29 @@ import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOu
 import Image from 'next/image';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
+import ImageElements from './ImageElements';
+
 
 function Client() {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 2000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
   return (
     <>
       <Typography variant="h4" color="initial" fontWeight={"bold"} textAlign={"center"} lineHeight={2}>Our Clients Say!</Typography>
@@ -24,69 +45,99 @@ function Client() {
       </Box> */}
 
 
-      <Grid container sx={{
-        marginBottom: "20px",
-        paddingBottom: "20px",
-        gap: "50px",
+      <Carousel
 
-      }}>
+        swipeable={false}
+        // draggable={false}
+        // showDots={true}
+        responsive={responsive}
+        ssr={true} // means to render carousel on server-side.
+        // infinite={false}
+        // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+        // autoPlaySpeed={100}
+        keyBoardControl={true}
+        // customTransition="all .5"
+        // transitionDuration={50}
+        // containerClass="carousel-container"
+        // removeArrowOnDeviceType={["tablet", "mobile"]}
+        // deviceType={this.props.deviceType}
+        // dotListClass="custom-dot-list-style"
+        // itemClass="carousel-item-padding-40-px"
+
+      // responsive={responsive}
+      >
+        <ImageElements />
+        <ImageElements />
+        <ImageElements />
+        <ImageElements />
+        <ImageElements />
+        <ImageElements />
 
 
-        <Grid size={{ xs: 12, md: 2 }} sx={{
-          height: { xs: "auto", md: "400px" },
-
-
-          // maxWidth:{md:"550px"},
-          // width:"100%",
-          width: { xs: "90%", sm: "80%", md: "450px", },
-          bgcolor: "#EFFDF5",
-          borderRadius: "10px",
-          padding: "25px",
-          position: "relative",
-
-        }}>
-          <Box sx={{
-            height: { xs: "auto", md: "350px" },
-
+        {/* <Grid container sx={{
+          marginBottom: "20px",
+          paddingBottom: "20px",
+          gap: "50px",
+        }}> */}
+        {/* <Grid size={{ xs: 12, md: 4 }} sx={{
+            height: { xs: "auto", md: "400px" },
             // maxWidth:{md:"550px"},
             // width:"100%",
-            width: { xs: "90%", sm: "80%", md: "400px", },
-            border: "1px dashed green",
+            width: { xs: "90%", sm: "80%", md: "450px", },
+            bgcolor: "#EFFDF5",
             borderRadius: "10px",
-            padding: "30px",
-            alignItems: "start",
+            padding: "25px",
             position: "relative",
-            bgcolor: "white",
-          }}>
-            <Image src={"/client1.jpg"} height={120} width={120} style={{
-              borderRadius: "50%",
-              marginBottom: "30px",
-              position: "absolute",
-              left: "40%",
-              top: "-60px",
-              transform: "translateX(-20%)",
-              border: "10px solid #EFFDF5"
-              // boxSizing:"border-box"
-            }} alt='client1' />
-            <Typography sx={{ textAlign: "center", margin: "5px", paddingTop: "30px", fontWeight: "bold" }}>JAZIYA</Typography>
-            <Stack spacing={1} sx={{justifyContent:"center",alignItems:"center",marginBottom:"20px"}}>
-              <Rating name="half-rating" defaultValue={4.5} precision={0.5} />
-            </Stack>
-            I had a wonderful experience staying at this PG. The rooms were clean and spacious, and the staff was very friendly and helpful. The location was also very convenient, with easy access to public transportation and amenities. I would definitely recommend this PG to anyone looking for a comfortable and affordable place to stay.
-          </Box>
-        </Grid>
-        <Grid size={{ xs: 12, md: 2 }} sx={{
-          height: { xs: "auto", md: "400px" },
-          // width:"100%",
-          // maxWidth:{md:"550px"},
-          width: { xs: "90%", sm: "80%", md: "450px", },
-          bgcolor: "#EFFDF5",
-          borderRadius: "10px",
-          padding: "25px",
-          position: "relative",
 
-        }}>
-          <Box sx={{
+          }}>
+            <div>
+
+              <Box sx={{
+                height: { xs: "auto", md: "350px" },
+
+                // maxWidth:{md:"550px"},
+                // width:"100%",
+                width: { xs: "90%", sm: "80%", md: "400px", },
+                border: "1px dashed green",
+                borderRadius: "10px",
+                padding: "30px",
+                alignItems: "start",
+                position: "relative",
+                bgcolor: "white",
+              }}>
+                <Image src={"/client1.jpg"} height={120} width={120} style={{
+                  borderRadius: "50%",
+                  marginBottom: "30px",
+                  position: "absolute",
+                  left: "40%",
+                  top: "-70px",
+                  // zIndex:1,
+                  // transform: "translateX(-20%)",
+                  border: "10px solid #EFFDF5"
+                  // boxSizing:"border-box"
+                }} alt='client1' />
+                <Typography sx={{ textAlign: "center", margin: "5px", paddingTop: "30px", fontWeight: "bold" }}>JAZIYA</Typography>
+                <Stack spacing={1} sx={{ justifyContent: "center", alignItems: "center", marginBottom: "20px" }}>
+                  <Rating name="half-rating" defaultValue={4.5} precision={0.5} />
+                </Stack>
+                I had a wonderful experience staying at this PG. The rooms were clean and spacious, and the staff was very friendly and helpful. The location was also very convenient, with easy access to public transportation and amenities. I would definitely recommend this PG to anyone looking for a comfortable and affordable place to stay.
+              </Box>
+            </div>
+          </Grid> */}
+
+        {/* 
+          <Grid size={{ xs: 12, md: 4 }} sx={{
+            height: { xs: "auto", md: "400px" },
+            // maxWidth:{md:"550px"},
+            // width:"100%",
+            width: { xs: "90%", sm: "80%", md: "450px", },
+            bgcolor: "#EFFDF5",
+            borderRadius: "10px",
+            padding: "25px",
+            position: "relative",
+
+          }}>
+          <div><Box sx={{
             height: { xs: "auto", md: "350px" },
             // width:"100%",
             width: { xs: "90%", sm: "80%", md: "400px", },
@@ -105,7 +156,7 @@ function Client() {
               transform: "translateX(-20%)",
               boxSizing: "border-box",
               border: "10px solid #EFFDF5"
-            }} alt='client1' />
+            }} alt='client2' />
             <Typography sx={{ textAlign: "center", margin: "5px", paddingTop: "30px", fontWeight: "bold" }}>RIYA</Typography>
             <Stack spacing={1} sx={{justifyContent:"center",alignItems:"center",marginBottom:"20px"}}>
               <Rating name="half-rating" defaultValue={3.5} precision={0.1} />
@@ -113,19 +164,20 @@ function Client() {
 
 
             I had a wonderful experience staying at this PG. The rooms were clean and spacious, and the staff was very friendly and helpful. The location was also very convenient, with easy access to public transportation and amenities. I would definitely recommend this PG to anyone looking for a comfortable and affordable place to stay.
-          </Box>
-        </Grid>
-        <Grid size={{ xs: 12, md: 2 }} sx={{
-          height: { xs: "auto", md: "400px" },
-          // width:"100%",
-          // maxWidth:{md:"550px"},
-          width: { xs: "90%", sm: "80%", md: "450px", },
-          bgcolor: "#EFFDF5",
-          borderRadius: "10px",
-          padding: "25px",
-          position: "relative",
-        }}>
-          <Box sx={{
+          </Box></div>
+          </Grid>
+          <Grid size={{ xs: 12, md: 4 }} sx={{
+            height: { xs: "auto", md: "400px" },
+            // maxWidth:{md:"550px"},
+            // width:"100%",
+            width: { xs: "90%", sm: "80%", md: "450px", },
+            bgcolor: "#EFFDF5",
+            borderRadius: "10px",
+            padding: "25px",
+            position: "relative",
+
+          }}>
+          <div><Box sx={{
             height: { xs: "auto", md: "350px" },
             // width:"100%",
             width: { xs: "90%", sm: "80%", md: "400px", },
@@ -133,7 +185,7 @@ function Client() {
             borderRadius: "10px",
             padding: "30px",
             position: "relative",
-            bgcolor: "white"
+            bgcolor: "white",
           }}>
             <Image src={"/client3.jpg"} height={120} width={120} style={{
               borderRadius: "50%",
@@ -144,25 +196,63 @@ function Client() {
               transform: "translateX(-20%)",
               boxSizing: "border-box",
               border: "10px solid #EFFDF5"
-            }} alt='client1' />
-            <Typography sx={{ textAlign: "center", margin: "5px", paddingTop: "30px", fontWeight: "bold" }}>FARZIYA</Typography>
+            }} alt='client3' />
+            <Typography sx={{ textAlign: "center", margin: "5px", paddingTop: "30px", fontWeight: "bold" }}>RIYA</Typography>
             <Stack spacing={1} sx={{justifyContent:"center",alignItems:"center",marginBottom:"20px"}}>
-              <Rating name="half-rating" defaultValue={4.0} precision={0.5} />
+              <Rating name="half-rating" defaultValue={3.5} precision={0.1} />
             </Stack>
 
-            I had a wonderful experience staying at this PG. The rooms were clean and spacious, and the staff was very friendly and helpful. The location was also very convenient, with easy access to public transportation and amenities. I would definitely recommend this PG to anyone looking for a comfortable and affordable place to stay.
-          </Box>
-        </Grid>
-      </Grid>
 
-      {/* <Box sx={{ display: "flex" }}>
-        <ArrowCircleRightOutlinedIcon sx={{
-          fontSize: 50,
-          color: "#00B98E",
-          // marginTop: "100%",
-          // marginLeft: "60%"
-        }} />
-      </Box> */}
+            I had a wonderful experience staying at this PG. The rooms were clean and spacious, and the staff was very friendly and helpful. The location was also very convenient, with easy access to public transportation and amenities. I would definitely recommend this PG to anyone looking for a comfortable and affordable place to stay.
+          </Box></div>
+          </Grid>
+          <Grid size={{ xs: 12, md: 4 }} sx={{
+            height: { xs: "auto", md: "400px" },
+            // maxWidth:{md:"550px"},
+            // width:"100%",
+            width: { xs: "90%", sm: "80%", md: "450px", },
+            bgcolor: "#EFFDF5",
+            borderRadius: "10px",
+            padding: "25px",
+            position: "relative",
+
+          }}>
+          <div><Box sx={{
+            height: { xs: "auto", md: "350px" },
+            // width:"100%",
+            width: { xs: "90%", sm: "80%", md: "400px", },
+            border: "1px dashed green",
+            borderRadius: "10px",
+            padding: "30px",
+            position: "relative",
+            bgcolor: "white",
+          }}>
+            <Image src={"/client4.jpg"} height={120} width={120} style={{
+              borderRadius: "50%",
+              marginBottom: "30px",
+              position: "absolute",
+              left: "40%",
+              top: "-60px",
+              transform: "translateX(-20%)",
+              boxSizing: "border-box",
+              border: "10px solid #EFFDF5"
+            }} alt='client4' />
+            <Typography sx={{ textAlign: "center", margin: "5px", paddingTop: "30px", fontWeight: "bold" }}>RIYA</Typography>
+            <Stack spacing={1} sx={{justifyContent:"center",alignItems:"center",marginBottom:"20px"}}>
+              <Rating name="half-rating" defaultValue={3.5} precision={0.1} />
+            </Stack>
+
+
+            I had a wonderful experience staying at this PG. The rooms were clean and spacious, and the staff was very friendly and helpful. The location was also very convenient, with easy access to public transportation and amenities. I would definitely recommend this PG to anyone looking for a comfortable and affordable place to stay.
+          </Box></div>
+          </Grid>
+
+ */}
+
+
+        {/* </Grid> */}
+      </Carousel>
+
     </>
   )
 }

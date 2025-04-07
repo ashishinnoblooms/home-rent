@@ -5,6 +5,7 @@ import "./globals.css";
 import Footer from "./footer";
 import { styleText } from "util";
 import Navbar from "./component/Navbar";
+import { Container } from "@mui/material";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,8 +35,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable}`}style={{backgroundColor:'#EFFDF5 '}}>
-       
-        <Navbar/>
+       {/* <Container > */}
+       <Navbar/>
+       {/* </Container> */}
+        
         {children}
         <Footer/>
       </body>
