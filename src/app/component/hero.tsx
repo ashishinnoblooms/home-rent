@@ -15,7 +15,7 @@ export default function Hero() {
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 2000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -126,7 +126,13 @@ export default function Hero() {
                     alt={img.alt}
                     width={740}
                     height={500}
-                    layout="responsive"
+                    style={{
+                      borderRadius: 3,
+                      maxHeight: 500,
+                      height: "auto",
+                      width: "100%",
+                      objectFit: "cover",
+                    }}
                   />
                 </Box>
               )

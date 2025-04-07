@@ -1,6 +1,5 @@
 "use client";
-import About from "@/app/component/aboutus";
-import Enquiryform from "@/app/component/enquiryform";
+import ContactUs from "@/app/component/contactUs";
 import PropertyList from "@/app/component/propertyList";
 import {
   Box,
@@ -14,7 +13,7 @@ import {
 import Image from "next/image";
 import React from "react";
 
-export default function Enquiry() {
+export default function Property() {
   const breadcrumbs = [
     <Link
       underline="hover"
@@ -26,7 +25,7 @@ export default function Enquiry() {
       HOME
     </Link>,
     <Typography key="3" sx={{ color: "text.primary" }}>
-      ABOUT
+      PROPERTY
     </Typography>,
   ];
   return (
@@ -45,7 +44,7 @@ export default function Enquiry() {
               fontSize="calc(1.1rem + 2.1vw)" // "3.5rem"
               mb={3}
             >
-              About Us
+              Property List
             </Typography>
             <Stack spacing={2}>
               <Breadcrumbs separator="›" aria-label="breadcrumb">
@@ -73,7 +72,6 @@ export default function Enquiry() {
         </Grid>
       </Grid>
       <PropertyList />
-      <Enquiryform/>
     </Container>
   );
 }

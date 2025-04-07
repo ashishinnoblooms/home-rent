@@ -6,6 +6,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  styled,
   Typography,
 } from "@mui/material";
 import Image from "next/image";
@@ -13,42 +14,36 @@ import React from "react";
 import CheckIcon from "@mui/icons-material/Check";
 
 export default function About() {
+  const AboutImageContainer = styled(Box)(({ theme }) => ({
+    position: 'relative',
+    overflow: 'hidden',
+    padding: theme.spacing(5),
+    paddingRight: 0,
+    '&::before': {
+      position: 'absolute',
+      content: '""',
+      top: 0,
+      left: '-50%',
+      width: '100%',
+      height: '100%',
+      backgroundColor: '#00b98e',
+      transform: 'skew(20deg)',
+    },
+  }));
+  
+  const AboutImage = styled('img')({
+    position: 'relative',
+    width: '90%',
+    height: 'auto',
+  });
+  
   return (
-    <Grid container>
+    <Grid container paddingBlock={10}>
       <Grid size={{ xs: 12, md: 6 }} padding={2}>
-        {/* <Box
-          sx={{
-            backgroundColor: "white",
-            padding: 3,
-          }}
-        >
-          <Box
-            sx={{
-              position: "relative",
-              padding: 3,
-              "&::before": {
-                position: "absolute",
-                content: '""',
-                top: 0,
-                left: "-50%",
-                width: "100%",
-                height: "100%",
-                background: "#00b98e",
-                transform: "skew(20deg)",
-                zIndex: 1,
-              },
-            }}
-          > */}
-        <Image
-          src="/carousel-1.jpg"
-          alt="house of ashish"
-          width={600}
-          height={600}
-          style={{ objectFit: "contain" }}
-          layout="responsive"
-        />
-        {/* </Box>
-        </Box> */}
+      <AboutImageContainer>
+        <AboutImage src="/carousel-1.jpg" alt="About us" />
+      </AboutImageContainer>
+
       </Grid>
       <Grid size={{ xs: 12, md: 6 }} alignContent="center" padding={2}>
         <Box>
