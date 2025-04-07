@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "./footer";
 import Navbar from "./component/Navbar";
+import { Container } from "@mui/material";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-Inter',
+  subsets: ["latin"],
+  variable: "--font-Inter",
 });
 
 export const metadata: Metadata = {
@@ -31,10 +32,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable}`} style={{backgroundColor:'#EFFDF5 '}}>
-        <Navbar/>
-          {children}
-        <Footer/>
+      <body
+        className={`${inter.variable}`}
+        style={{ backgroundColor: "#EFFDF5 " }}
+      >
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

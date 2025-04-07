@@ -15,35 +15,34 @@ import CheckIcon from "@mui/icons-material/Check";
 
 export default function About() {
   const AboutImageContainer = styled(Box)(({ theme }) => ({
-    position: 'relative',
-    overflow: 'hidden',
+    position: "relative",
+    overflow: "hidden",
     padding: theme.spacing(5),
     paddingRight: 0,
-    '&::before': {
-      position: 'absolute',
+    "&::before": {
+      position: "absolute",
       content: '""',
       top: 0,
-      left: '-50%',
-      width: '100%',
-      height: '100%',
-      backgroundColor: '#00b98e',
-      transform: 'skew(20deg)',
+      left: "-50%",
+      width: "100%",
+      height: "100%",
+      backgroundColor: "#00b98e",
+      transform: "skew(20deg)",
     },
   }));
-  
-  const AboutImage = styled('img')({
-    position: 'relative',
-    width: '90%',
-    height: 'auto',
+
+  const AboutImage = styled("img")({
+    position: "relative",
+    width: "90%",
+    height: "auto",
   });
-  
+
   return (
     <Grid container paddingBlock={10}>
       <Grid size={{ xs: 12, md: 6 }} padding={2}>
-      <AboutImageContainer>
-        <AboutImage src="/carousel-1.jpg" alt="About us" />
-      </AboutImageContainer>
-
+        <AboutImageContainer>
+          <AboutImage src="/carousel-1.jpg" alt="About us" />
+        </AboutImageContainer>
       </Grid>
       <Grid size={{ xs: 12, md: 6 }} alignContent="center" padding={2}>
         <Box>

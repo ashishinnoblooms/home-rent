@@ -50,7 +50,7 @@ export default function ContactUs() {
   const handleChange = (e: any) => {
     e.preventDefault();
     const { name, value } = e.target;
-    setformData((prev:any) => ({ ...prev, [name]: value }));
+    setformData((prev: any) => ({ ...prev, [name]: value }));
   };
   return (
     <Grid container spacing={3} padding={3}>
@@ -124,13 +124,14 @@ export default function ContactUs() {
           </Stack>
         </Grid>
       ))}
-      <Grid size={{ xs: 12, md: 6 }} sx={{minHeight:"350px"}}>
+      <Grid size={{ xs: 12, md: 6 }} sx={{ minHeight: "350px" }}>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1472.5060662393373!2d77.39486879842131!3d28.622886564510303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef34aad0c8e5%3A0xac55a4bbdbb9f0f1!2sInnoblooms%3A%20Website%20Designing%20%7C%20Web%20Development%20%7C%20Digital%20Marketing%20%7C%20Software%20Development!5e0!3m2!1sen!2sin!4v1743745500879!5m2!1sen!2sin"
           style={{ border: "2px solid #00b98e", borderRadius: "5px" }}
           width="100%"
           height="100%"
-          loading="lazy"/>
+          loading="lazy"
+        />
       </Grid>
       <Grid container size={{ xs: 12, sm: 12, md: 6 }}>
         <Grid size={{ xs: 12, sm: 6, md: 6 }}>
@@ -142,7 +143,7 @@ export default function ContactUs() {
             value={formData.name}
             onChange={(e: any) => handleChange(e)}
             label="Your Name"
-            fullWidth 
+            fullWidth
           />
         </Grid>
         <Grid size={{ xs: 12, sm: 6, md: 6 }}>
@@ -179,8 +180,8 @@ export default function ContactUs() {
             onChange={(e: any) => handleChange(e)}
             label="Message"
             multiline
-            rows={8} 
-            fullWidth 
+            rows={8}
+            fullWidth
           />
         </Grid>
         <Grid size={{ xs: 12, sm: 12, md: 12 }}>

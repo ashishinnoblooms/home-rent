@@ -12,27 +12,29 @@ import React from "react";
 import YardTwoToneIcon from "@mui/icons-material/YardTwoTone";
 
 function Navbar() {
-  const navLink = ["HOME", "ABOUT", "PROPERTY", "CONTACT", "ENQUIRY"];
+  const navLink = ["HOME", "ABOUT", "PROPERTY", "CONTACT", "Enquiry"];
   return (
-    <Container>
-      <Box
-        sx={{
-          height: { xs: "auto", md: "90px" },
-        //   width: "100%",
-        //   maxWidth: { xs: "1300px", md: "1400px" },
-          // padding: { xs: "1px", md: "20px 25px 30px 25px" },
-          border: "1px",
-          borderRadius: "2px",
-          boxShadow: "0 0 6px gray",
-          bgcolor: "white",
-          margin: { md: "60px" },
-          marginBottom: { xs: "40px", md: "80px" },
-          position: "fixed",
-          zIndex: "1",
-        }}
-      >
-        <Grid container spacing={1} maxWidth="xl">
-          <Grid >
+    <>
+      <Box>
+        <Grid
+          container
+          spacing={1}
+          sx={{
+            height: { xs: "auto", md: "90px" },
+            width: "100%",
+            // minWidth:{xs:"1300px",md: "1400px" },
+            // padding: { xs: "1px", md: "20px 25px 30px 25px" },
+            border: "1px",
+            borderRadius: "2px",
+            boxShadow: "0 0 6px gray",
+            bgcolor: "white",
+            // margin: { md: "60px" },
+            marginBottom: { xs: "40px", md: "80px" },
+            position: "fixed",
+            zIndex: "1",
+          }}
+        >
+          <Grid size={{ xs: 6, md: 6 }}>
             <Box
               sx={{ marginLeft: { xs: "20px", md: "40px" }, display: "flex" }}
             >
@@ -72,7 +74,7 @@ function Navbar() {
               </Link>
             </Box>
           </Grid>
-          <Grid >
+          <Grid size={{ xs: 6, md: 6 }}>
             <Box sx={{ margin: "35px" }}>
               {navLink.map((links) => (
                 <Link
@@ -90,13 +92,12 @@ function Navbar() {
                 >
                   {links}
                 </Link>
-
               ))}
             </Box>
           </Grid>
         </Grid>
       </Box>
-    </Container>
+    </>
   );
 }
 

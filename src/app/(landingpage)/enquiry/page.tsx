@@ -73,7 +73,7 @@ export default function Enquiry() {
         </Grid>
       </Grid>
       <PropertyList />
-      <Enquiryform/>
+      <Enquiryform />
     </Container>
   );
 }

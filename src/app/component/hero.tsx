@@ -37,8 +37,7 @@ export default function Hero() {
             variant="h1"
             color="var(--basic-font-color)"
             fontWeight="700"
-            fontSize=// "3.5rem"
-            "calc(1.1rem + 2.1vw)"
+            fontSize="calc(1.1rem + 2.1vw)" // "3.5rem"
             mb={3}
           >
             Find A{" "}

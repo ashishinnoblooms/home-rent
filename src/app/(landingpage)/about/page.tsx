@@ -72,7 +72,7 @@ export default function Contact() {
         </Grid>
       </Grid>
       <PropertyList />
-      <About/>
+      <About />
     </Container>
   );
 }

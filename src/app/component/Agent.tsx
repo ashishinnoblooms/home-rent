@@ -55,12 +55,16 @@ function Agent() {
                 sx={{
                   fontSize: { xs: "2rem", md: "3rem" },
                   fontWeight: "700",
-                  color:'#0E2E50'
+                  color: "#0E2E50",
                 }}
               >
                 Contact With Our Certified Agent
               </Typography>
-              <Typography component="p" paddingTop={2} sx={{color:'#666565'}}>
+              <Typography
+                component="p"
+                paddingTop={2}
+                sx={{ color: "#666565" }}
+              >
                 Luxurious PG and Flats for sale or rent in prime locations
                 worldwide available now.
               </Typography>
@@ -80,7 +84,7 @@ function Agent() {
                     padding: "1rem 1.25rem",
                     fontSize: "1rem",
                     backgroundColor: "#00b98e",
-                    whiteSpace:'nowrap'
+                    whiteSpace: "nowrap",
                   }}
                 >
                   <CallSharpIcon sx={{ mr: 1 }} />
@@ -93,7 +97,7 @@ function Agent() {
                     padding: "1rem 1.25rem",
                     fontSize: "1rem",
                     backgroundColor: "#0E2E50",
-                    whiteSpace:'nowrap'
+                    whiteSpace: "nowrap",
                   }}
                 >
                   <CalendarMonthIcon sx={{ mr: 1 }} />
