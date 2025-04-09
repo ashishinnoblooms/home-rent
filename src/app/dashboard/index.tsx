@@ -8,7 +8,7 @@ import PropertyList from "../component/propertyList";
 import Agent from "../component/Agent";
 import Client from "../component/Client";
 import About from "../component/aboutus";
-import Property from "../component/Property";
+import Properties from "../component/Properties";
 
 export default function Dashboard() {
   return (
@@ -17,7 +17,7 @@ export default function Dashboard() {
       <PropertyList />
       <PropertyTypes />
       <About />
-      <Property />
+      <Properties />
       <Agent />
       <Client />
     </Container>

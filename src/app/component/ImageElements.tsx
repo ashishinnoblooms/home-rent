@@ -1,93 +1,55 @@
-import { Box, Grid, Rating, Stack, Typography } from "@mui/material";
+import { Box, Container, Grid, Rating, Stack, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 
-export default function ImageElements() {
-  return (
-    <Grid
-      container
-      spacing={3}
-      sx={{
-        marginBottom: "20px",
-        paddingBottom: "20px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        gap: "10px",
-      }}
-    >
-      <Grid
-        size={{ xs: 12, md: 2, lg: 2 }}
-        sx={{
-          height: { xs: "auto", md: "400px" },
-          // maxWidth:{md:"550px"},
-          // width:"100%",
-          width: { xs: "90%", sm: "80%", md: "400px" },
-          bgcolor: "#EFFDF5",
-          borderRadius: "10px",
-          padding: "25px",
-          position: "relative",
-        }}
-      >
-        <Box
-          sx={{
-            height: { xs: "auto", md: "350px" },
-            maxWidth: { md: "550px" },
-            width: "100%",
-            // width: { xs: "90%", sm: "80%", md: "350px", },
-            border: "1px dashed green",
-            borderRadius: "10px",
-            padding: "30px",
-            alignItems: "start",
-            position: "relative",
-            bgcolor: "white",
-            // boxShadow:"0 0 20px rgb(88, 249, 157)"
-          }}
-        >
-          <Image
-            src={"/client1.jpg"}
-            height={120}
-            width={120}
-            style={{
-              borderRadius: "50%",
-              marginBottom: "30px",
-              position: "absolute",
-              left: "3%",
-              top: "2px",
-              //   zIndex:30,
-              // transform: "translateX(-20%)",
-              border: "10px solid #EFFDF5",
-              // boxSizing:"border-box"
-            }}
-            alt="client1"
-          />
-          <Typography
-            sx={{
-              textAlign: "center",
-              margin: "5px",
-              paddingTop: "30px",
-              fontWeight: "bold",
-            }}
-          >
-            JAZIYA
-          </Typography>
-          <Stack
-            spacing={1}
-            sx={{
-              justifyContent: "center",
-              alignItems: "center",
-              marginBottom: "20px",
-            }}
-          >
-            <Rating name="half-rating" defaultValue={4.5} precision={0.5} />
-          </Stack>
-          I had a wonderful experience staying at this PG. The rooms were clean
-          and spacious, and the staff was very friendly and helpful. The
-          location was also very convenient, with easy access to public
-          transportation and amenities. I would definitely recommend this PG to
-          anyone looking for a comfortable and affordable place to stay.
-        </Box>
-      </Grid>
-    </Grid>
-  );
+// const clientData: any = [
+//     { src: "/client1.jpg", alt: "client1", name: "JAZIYA", rating: <Rating name="half-rating" defaultValue={4.5} precision={0.5} />, description: " I had a wonderful experience staying at this PG. The rooms were clean and spacious, and the staff was very friendly and helpful. The location was also very convenient, with easy access to public transportation and amenities. I would definitely recommend this PG to anyone looking for a comfortable and affordable place to stay." },
+//     { src: "/client2.jpg", alt: "client2", name: "FARZIYA", rating: <Rating name="half-rating" defaultValue={4.5} precision={0.5} />, description: "I had a wonderful experience staying at this PG. The rooms were clean and spacious, and the staff was very friendly and helpful. The location was also very convenient, with easy access to public transportation and amenities. I would definitely recommend this PG to anyone looking for a comfortable and affordable place to stay." },
+//     { src: "/client3.jpg", alt: "client3", name: "DANZI", rating: <Rating name="half-rating" defaultValue={4.5} precision={0.5} />, description: "I had a wonderful experience staying at this PG. The rooms were clean and spacious, and the staff was very friendly and helpful. The location was also very convenient, with easy access to public transportation and amenities. I would definitely recommend this PG to anyone looking for a comfortable and affordable place to stay." },
+//     { src: "/client4.jpg", alt: "client4", name: "MENK", rating: <Rating name="half-rating" defaultValue={4.5} precision={0.5} />, description: "I had a wonderful experience staying at this PG. The rooms were clean and spacious, and the staff was very friendly and helpful. The location was also very convenient, with easy access to public transportation and amenities. I would definitely recommend this PG to anyone looking for a comfortable and affordable place to stay." },
+//     { src: "/client4.jpg", alt: "client4", name: "MENK", rating: <Rating name="half-rating" defaultValue={4.5} precision={0.5} />, description: "I had a wonderful experience staying at this PG. The rooms were clean and spacious, and the staff was very friendly and helpful. The location was also very convenient, with easy access to public transportation and amenities. I would definitely recommend this PG to anyone looking for a comfortable and affordable place to stay." },
+//     { src: "/client4.jpg", alt: "client4", name: "MENK", rating: <Rating name="half-rating" defaultValue={4.5} precision={0.5} />, description: "I had a wonderful experience staying at this PG. The rooms were clean and spacious, and the staff was very friendly and helpful. The location was also very convenient, with easy access to public transportation and amenities. I would definitely recommend this PG to anyone looking for a comfortable and affordable place to stay." },
+// ]
+
+
+export default function ImageElements(props:any) {
+    return (
+            <Container maxWidth='xl' sx={{ display: 'flex', justifyContent: 'space-between', gap: '20px', marginBottom: "30px", padding: "6px", }}>
+                {/* {clientData.map((item: any, index: any) => ( */}
+                    <Box sx={{ minWidth: '350px', border: '9px solid #EFFDF5', padding: '10px', borderRadius: "20px" }}>
+                        <Box>
+                            <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginBottom: "20px", }}>
+                                <Box sx={{ width: '200px', height: '100px', display: "flex", justifyContent: "center", alignItems: "center", }}
+                                >
+                                    <Image
+                                        src={props.src}
+                                        height={70}
+                                        width={100}
+                                        style={{ borderRadius: "10%", border: "2px solid #EFFDF5", objectFit: 'cover' }}
+                                        alt={props.alt}
+
+                                    // layout="responsive"
+                                    />
+                                </Box>
+                                <Typography>{props.name}</Typography>
+
+                                {/* <Stack spacing={1} > */}
+                                {props.rating}
+                                {/* </Stack> */}
+
+                            </Box>
+
+                            <Box sx={{ textAlign: "justify", }}>
+                                {props.description}
+                            </Box>
+                        </Box>
+
+
+
+
+                    </Box>
+                {/* ))} */}
+            </Container>
+
+    );
 }

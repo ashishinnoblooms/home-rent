@@ -1,5 +1,5 @@
 "use client";
-import { Grid, Typography, Button, Box } from "@mui/material";
+import { Grid, Typography, Button, Box, Collapse } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -109,7 +109,6 @@ export default function Hero() {
               }}
             />
           </Button>
-
           {images.map(
             (img, index) =>
               current === index && (

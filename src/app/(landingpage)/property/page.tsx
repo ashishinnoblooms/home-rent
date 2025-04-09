@@ -1,6 +1,4 @@
 "use client";
-import ContactUs from "@/app/component/contactUs";
-import PropertyList from "@/app/component/propertyList";
 import {
   Box,
   Breadcrumbs,
@@ -12,6 +10,8 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import React from "react";
+import Properties from "@/app/component/Properties";
+import PropertyList from "@/app/component/propertyList";
 
 export default function Property() {
   const breadcrumbs = [
@@ -72,6 +72,7 @@ export default function Property() {
         </Grid>
       </Grid>
       <PropertyList />
+      <Properties/>
     </Container>
   );
 }

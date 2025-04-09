@@ -1,5 +1,4 @@
 "use client";
-import About from "@/app/component/aboutus";
 import Enquiryform from "@/app/component/enquiryform";
 import PropertyList from "@/app/component/propertyList";
 import {
