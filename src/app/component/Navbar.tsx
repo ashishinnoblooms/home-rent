@@ -1,104 +1,151 @@
+"use client";
 import {
-  Grid,
-  AppBar,
-  Toolbar,
   Typography,
   Link,
-  Button,
   Box,
   Container,
+  Collapse,
+  Fade,
+  Grow,
+  Slide,
 } from "@mui/material";
 import React from "react";
 import YardTwoToneIcon from "@mui/icons-material/YardTwoTone";
+import MenuIcon from "@mui/icons-material/Menu";
 
-function Navbar() {
-  const navLink = ["HOME", "ABOUT", "PROPERTY", "CONTACT", "Enquiry"];
+export default function Navbar() {
+  const [nav, setNav] = React.useState(false);
+  const navLink = ["HOME", "ABOUT", "PROPERTY", "CONTACT", "ENQUIRY"];
+  const handleClick = () => {
+    setNav((prev) => !prev);
+  };
   return (
-    <>
-      <Box>
-        <Grid
-          container
-          spacing={1}
+    <Container
+      maxWidth="xl"
+      sx={{
+        backgroundColor: "white",
+        zIndex: 99,
+        margin: "0 auto",
+        padding: "8px 10px",
+        position: "sticky",
+        top: "0",
+        boxShadow: "0 5px 5px rgba(0, 0, 0, 0.5)",
+        marginBottom: "5px",
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <Box
           sx={{
-            height: { xs: "auto", md: "90px" },
-            width: "100%",
-            // minWidth:{xs:"1300px",md: "1400px" },
-            // padding: { xs: "1px", md: "20px 25px 30px 25px" },
-            border: "1px",
-            borderRadius: "2px",
-            boxShadow: "0 0 6px gray",
-            bgcolor: "white",
-            // margin: { md: "60px" },
-            marginBottom: { xs: "40px", md: "80px" },
-            position: "fixed",
-            zIndex: "1",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            minWidth: "200px",
           }}
         >
-          <Grid size={{ xs: 6, md: 6 }}>
-            <Box
-              sx={{ marginLeft: { xs: "20px", md: "40px" }, display: "flex" }}
+          <Link href="/">
+            <YardTwoToneIcon
+              sx={{
+                padding: "5px",
+                width: "50px",
+                height: "50px",
+                borderRadius: "50%",
+                border: "1px dotted #00b98e",
+                color: "#00b98e",
+                margin: "0 8px 0 0",
+              }}
+            />
+          </Link>
+          <Link href="./" sx={{ textDecoration: "none" }}>
+            <Typography
+              fontSize="calc(1.375rem + 1.5vw)"
+              fontWeight="700"
+              color="#00b98e"
             >
-              <Link href="./">
-                <YardTwoToneIcon
-                  sx={{
-                    height: { xs: "50px", md: "70px" },
-                    width: { xs: "50px", md: "70px" },
-                    padding: "5px",
-                    margin: "10px",
-                    border: "1px dashed green",
-                    color: "green",
-                    borderRadius: "50%",
-                    "&:hover": { cursor: "pointer" },
-                  }}
-                />
-              </Link>
+              {" "}
+              Home Rent
+            </Typography>
+          </Link>
+        </Box>
+
+        <Box
+          sx={{
+            minWidth: "30%",
+            justifyContent: "space-between",
+            alignItems: "center",
+            display: { xs: "none", md: "flex" },
+          }}
+        >
+          {navLink.map((links) => (
+            <Link
+              key={links}
+              href={links === "HOME" ? `/` : `/${links.toLowerCase()}`}
+              sx={{
+                textDecoration: "none",
+                color: "black",
+                "&:hover": { color: "#00B98E" },
+                "&:active": { color: "#00b98e" },
+                fontSize: { xs: ".8rem", sm: "1rem" },
+                fontWeight: 500,
+                margin: { xs: "10px", md: "25px" },
+              }}
+            >
+              {links}
+            </Link>
+          ))}
+        </Box>
+        <Box
+          sx={{
+            display: { xs: "flex", md: "none" },
+            alignItems: "center",
+            border: "2px solid #00b98e",
+            borderRadius: "5px",
+            "&:hover": {
+              cursor: "pointer",
+              backgroundColor: "#00b98e",
+              color: "white",
+            },
+          }}
+        >
+          <MenuIcon onClick={handleClick} />
+        </Box>
+      </Box>
+      <Collapse in={nav}>
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {navLink.map((links) => (
               <Link
-                href="./"
+                key={links}
+                href={links === "HOME" ? `/` : `/${links.toLowerCase()}`}
                 sx={{
                   textDecoration: "none",
+                  color: "black",
+                  "&:hover": { color: "#00B98E" },
+                  "&:active": { color: "#00b98e" },
+                  fontSize: { xs: ".8rem", sm: "1rem" },
+                  fontWeight: 500,
+                  margin: "10px",
                 }}
               >
-                <Typography
-                  sx={{
-                    textDecoration: "none",
-                    color: "#00B98E",
-                    fontWeight: "bold",
-                    fontSize: { xs: "25px", md: "35px" },
-                    marginTop: "15px",
-                    marginBottom: { xs: "0", md: "40px" },
-                  }}
-                >
-                  {" "}
-                  HOME RENT
-                </Typography>
+                {links}
               </Link>
-            </Box>
-          </Grid>
-          <Grid size={{ xs: 6, md: 6 }}>
-            <Box sx={{ margin: "35px" }}>
-              {navLink.map((links) => (
-                <Link
-                  key={links}
-                  href={links === "HOME" ? `/` : `/${links.toLowerCase()}`}
-                  sx={{
-                    textDecoration: "none",
-                    color: "black",
-                    "&:hover": { color: "#00B98E" },
-                    fontSize: { xs: "12px", md: "15px" },
-                    fontWeight: 500,
-                    fontFamily: "sans-serif",
-                    margin: { xs: "", md: "25px" },
-                  }}
-                >
-                  {links}
-                </Link>
-              ))}
-            </Box>
-          </Grid>
-        </Grid>
-      </Box>
-    </>
+            ))}
+          </Box>
+      </Collapse>
+    </Container>
   );
 }
 
-export default Navbar;
+

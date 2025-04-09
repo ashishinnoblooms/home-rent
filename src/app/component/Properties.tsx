@@ -1,12 +1,11 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
-import { relative } from "path";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalHotelIcon from "@mui/icons-material/LocalHotel";
 import BathtubSharpIcon from "@mui/icons-material/BathtubSharp";
 
-export default function Property() {
+export default function Properties() {
   const propertyImages = [
     { src: "/property-1.jpg", alt: "property 1" },
     { src: "/property-2.jpg", alt: "property 2" },
