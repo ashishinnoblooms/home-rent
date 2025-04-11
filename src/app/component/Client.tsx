@@ -10,7 +10,7 @@ import Stack from "@mui/material/Stack";
 import ImageElements from "./ImageElements";
 import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
-import "./client.css";
+
 
 const clientData: any = [
   {
@@ -168,7 +168,7 @@ function Client() {
         keyBoardControl={true}
         // arrows
         // showDots
-        // swipeable
+        swipeable
       >
         {ProductData}
       </Carousel>

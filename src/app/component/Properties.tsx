@@ -272,19 +272,26 @@ export default function Properties() {
         ))}
         <Box
           sx={{
-            width: "400px",
-            height: "70px",
-            borderRadius: "10px",
-            bgcolor: "#00B98E",
-            marginBottom: "100px",
+            width: "100%",
             display: "flex",
             justifyContent: "center",
+            // alignItems:'center',
+            marginBottom: "30px",
           }}
         >
-          <Button sx={{ padding: "20px 20px" }}>Browse More Property</Button>
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{
+              padding: "1rem 3rem",
+              fontSize: "1rem",
+              backgroundColor: "#00b98e",
+            }}
+          >
+            Browse More Property
+          </Button>
         </Box>
       </Grid>
-      {/* <FontAwesomeIcon icon="fa-solid fa-ruler-combined" /> */}
     </>
   );
 }

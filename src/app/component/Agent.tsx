@@ -3,6 +3,7 @@ import React from "react";
 import CallSharpIcon from "@mui/icons-material/CallSharp";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import Image from "next/image";
+import "./client.css";
 
 function Agent() {
   return (
