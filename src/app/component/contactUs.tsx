@@ -28,6 +28,12 @@ export default function ContactUs() {
       message: "",
     },
   ]);
+  const [error, setError] = React.useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
   const properties = [
     {
@@ -51,6 +57,43 @@ export default function ContactUs() {
     e.preventDefault();
     const { name, value } = e.target;
     setformData((prev: any) => ({ ...prev, [name]: value }));
+    setError((prev: any) => ({ ...prev, [name]: "" }));
+  };
+  const validate = () => {
+    let isValid = true;
+    const newError: any = {};
+    if (!formData.name) {
+      isValid = false;
+      newError.name = "Full name is required";
+    }
+    if (!formData.email) {
+      isValid = false;
+      newError.email = "Valid Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newError.email = "Please enter a valid email address.";
+    }
+    if (!formData.subject) {
+      isValid = false;
+      newError.subject = "Subject is required";
+    }
+    if (!formData.message) {
+      isValid = false;
+      newError.message = "This field is required";
+    }
+    setError(newError);
+    return isValid;
+  };
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    if (validate()) {
+      alert("Form submitted successfully");
+      setformData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    }
   };
   return (
     <Grid container spacing={3} padding={3}>
@@ -133,74 +176,86 @@ export default function ContactUs() {
           loading="lazy"
         />
       </Grid>
-      <Grid container size={{ xs: 12, sm: 12, md: 6 }}>
-        <Grid size={{ xs: 12, sm: 6, md: 6 }}>
-          <TextField
-            name="name"
-            placeholder="Enter Your Name"
-            variant="outlined"
-            size="medium"
-            value={formData.name}
-            onChange={(e: any) => handleChange(e)}
-            label="Your Name"
-            fullWidth
-          />
-        </Grid>
-        <Grid size={{ xs: 12, sm: 6, md: 6 }}>
-          <TextField
-            name="email"
-            placeholder="Enter Your Email"
-            variant="outlined"
-            size="medium"
-            value={formData.email}
-            onChange={(e: any) => handleChange(e)}
-            label="Your Email"
-            fullWidth
-          />
-        </Grid>
-        <Grid size={{ xs: 12, sm: 12, md: 12 }}>
-          <TextField
-            name="subjet"
-            placeholder="Subject"
-            variant="outlined"
-            size="medium"
-            value={formData.subject}
-            onChange={(e: any) => handleChange(e)}
-            label="Subject"
-            fullWidth
-          />
-        </Grid>
-        <Grid size={{ xs: 12, sm: 12, md: 12 }}>
-          <TextField
-            name="message"
-            placeholder="Message"
-            variant="outlined"
-            size="medium"
-            value={formData.message}
-            onChange={(e: any) => handleChange(e)}
-            label="Message"
-            multiline
-            rows={8}
-            fullWidth
-          />
-        </Grid>
-        <Grid size={{ xs: 12, sm: 12, md: 12 }}>
-          <Button
-            type="submit"
-            variant="contained"
-            size="large"
-            fullWidth
-            sx={{
-              mt: 1,
-              mb: 1,
-              backgroundColor: "#00b98e",
-              color: "white",
-              fontWeight: "bold",
-            }}
-          >
-            Submit
-          </Button>
-        </Grid>
+      <Grid container size={{ xs: 12, md: 6 }}>
+        <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+          <Grid container spacing={2}>
+            <Grid size={{ xs: 12, sm: 6}}>
+              <TextField
+                name="name"
+                placeholder="Enter Your Name"
+                variant="outlined"
+                size="medium"
+                value={formData.name}
+                onChange={handleChange}
+                label="Your Name"
+                fullWidth
+                error={!!error.name}
+                helperText={error.name}
+              />
+            </Grid>
+            <Grid size={{ xs: 12, sm: 6}}>
+              <TextField
+                name="email"
+                placeholder="Enter Your Email"
+                variant="outlined"
+                size="medium"
+                value={formData.email}
+                onChange={handleChange}
+                label="Your Email"
+                fullWidth
+                error={!!error.email}
+                helperText={error.email}
+              />
+            </Grid>
+            <Grid size={{ xs: 12, sm: 12}}>
+              <TextField
+                name="subjet"
+                placeholder="Subject"
+                variant="outlined"
+                size="medium"
+                value={formData.subject}
+                onChange={handleChange}
+                label="Subject"
+                fullWidth
+                error={!!error.subject}
+                helperText={error.subject}
+              />
+            </Grid>
+            <Grid size={{ xs: 12, sm: 12}}>
+              <TextField
+                name="message"
+                placeholder="Message"
+                variant="outlined"
+                size="medium"
+                value={formData.message}
+                onChange={handleChange}
+                label="Message"
+                multiline
+                rows={8}
+                fullWidth
+                error={!!error.message}
+                helperText={error.message}
+              />
+            </Grid>
+            <Grid size={{ xs: 12, sm: 12 }}>
+              <Button
+                type="submit"
+                variant="contained"
+                size="large"
+                fullWidth
+                sx={{
+                  mt: 1,
+                  mb: 1,
+                  backgroundColor: "#00b98e",
+                  color: "white",
+                  fontWeight: "bold",
+                }}
+              >
+                Submit
+              </Button>
+            </Grid>
+          </Grid>
+        </form>
       </Grid>
     </Grid>
   );

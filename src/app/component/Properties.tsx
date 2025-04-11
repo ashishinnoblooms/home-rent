@@ -93,7 +93,7 @@ export default function Properties() {
         sx={{
           fontWeight: "bold",
           fontFamily: "sans-serif",
-          paddingTop: "80px",
+          paddingTop: "20px",
           paddingLeft: "30px",
         }}
       >
