@@ -38,7 +38,7 @@ export default function About() {
   });
 
   return (
-    <Grid container paddingBlock={10}>
+    <Grid container paddingBlock={2}>
       <Grid size={{ xs: 12, md: 6 }} padding={2}>
         <AboutImageContainer>
           <AboutImage src="/carousel-1.jpg" alt="About us" />
