@@ -54,13 +54,5 @@ iframe {
   border-radius: 5px;
 }
 
-.zoom-container {
-  overflow: hidden;
-  transition: 'transform 1s ease-in-out';
-}
 
-.zoom-image:hover {
-  transform: scale(1.03);
-  /* transition: opacity 0.25s ease-in-out; */
-}
 

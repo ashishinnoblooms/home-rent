@@ -4,7 +4,6 @@ import {
   FormControl,
   Grid,
   InputLabel,
-  ListItem,
   MenuItem,
   Select,
   SelectChangeEvent,
@@ -22,16 +21,86 @@ export default function Enquiryform() {
     occupation: "",
     otherOccupation: "",
     enquiryType: "",
-
     enquiryDetails: "",
   });
+  const [error, setError]= React.useState({
+    title: "",
+    fname: "",
+    lname: "",
+    email: "",
+    occupation: "",
+    otherOccupation: "",
+    enquiryType: "",
+    enquiryDetails: "",
+  })
 
-  const handleChange = (event: SelectChangeEvent) => {
+  const handleChange = (event: any) => {
     const { name, value } = event.target;
     setSelect((prev) => ({ ...prev, [name]: value }));
+    setError((prev) => ({ ...prev, [name]: "" }));
   };
+
+  const validate =()=>{
+    let isValid = true;
+    const newError:any = {};
+    if(!select.title){
+      newError.title = "Title is Required"
+      isValid= false
+    }
+    if(!select.fname){
+      newError.fname = "First name is Required"
+      isValid= false
+    }
+    if(!select.lname){
+      newError.lname = "Last name is Required"
+      isValid= false
+    }
+    if(!select.email){
+      newError.email = "Email is Required"
+      isValid= false
+    } else if (!/\S+@\S+\.\S+/.test(select.email)) {
+      newError.email = "Invalid email format.";
+      isValid = false;
+    }
+    if(!select.occupation){
+      newError.occupation = "Occupation is Required"
+      isValid= false
+    }
+    if(select.occupation === "other" && !select.otherOccupation){
+      newError.otherOccupation = "Occupation is Required"
+      isValid= false
+    }
+    if(!select.enquiryType){
+      newError.enquiryType = "This field is Required"
+      isValid= false
+    }
+    if(!select.enquiryDetails){
+      newError.enquiryDetails = "This field is Required"
+      isValid= false
+    }
+    setError(newError)
+    return isValid
+  }
+  const handleSubmit=(e:any)=>{
+    e.preventDefault()
+    if(validate()){
+      alert("Form submitted successfully")
+      setSelect({
+        title: "",
+        fname: "",
+        lname: "",
+        email: "",
+        occupation: "",
+        otherOccupation: "",
+        enquiryType: "",
+        enquiryDetails: "",
+      })
+    }
+  }
+
   return (
     <Grid container sx={{ backgroundColor: "#EFFDF5", padding: 5 }}>
+
       <Grid size={{ xs: 12, sm: 10, md: 8 }} margin="0 auto">
         <Typography
           variant="h2"
@@ -53,7 +122,7 @@ export default function Enquiryform() {
           matters to us!
         </Typography>
       </Grid>
-
+      <form onSubmit={handleSubmit}>
       <Grid
         container
         size={{ xs: 12, sm: 10, md: 8 }}
@@ -70,36 +139,42 @@ export default function Enquiryform() {
               label="Title"
               onChange={handleChange}
               fullWidth
+              error={!!error.title}
             >
               <MenuItem value="miss">Miss</MenuItem>
               <MenuItem value="mrs">Mrs</MenuItem>
               <MenuItem value="ms">Ms</MenuItem>
               <MenuItem value="mr">Mr</MenuItem>
             </Select>
+            <Typography variant="caption" color="error">{error.title}</Typography>
           </FormControl>
         </Grid>
         <Grid size={{ xs: 12, sm: 5, md: 5 }}>
           <TextField
-            name="name"
+            name="fname"
             placeholder="Enter Your First Name"
             variant="outlined"
             size="medium"
             value={select.fname}
-            onChange={(e: any) => handleChange(e)}
+            onChange={handleChange}
             label="First Name "
             fullWidth
+            error={!!error.fname}
+            helperText={error.fname}
           />
         </Grid>
         <Grid size={{ xs: 12, sm: 5, md: 5 }}>
           <TextField
-            name="name"
+            name="lname"
             placeholder="Enter Your Last Name"
             variant="outlined"
             size="medium"
             value={select.lname}
-            onChange={(e: any) => handleChange(e)}
+            onChange={handleChange}
             label="Last Name"
             fullWidth
+            error={!!error.lname}
+            helperText={error.lname}
           />
         </Grid>
         <Grid size={{ xs: 12, sm: 12, md: 12 }}>
@@ -112,6 +187,8 @@ export default function Enquiryform() {
             onChange={(e: any) => handleChange(e)}
             label="Your Email"
             fullWidth
+            error={!!error.email}
+            helperText={error.email}
           />
         </Grid>
         <Grid size={{ xs: 12, sm: 12, md: 12 }}>
@@ -124,12 +201,14 @@ export default function Enquiryform() {
               label="Occupation"
               onChange={handleChange}
               fullWidth
+              error={!!error.occupation}
             >
               <MenuItem value="student">Student</MenuItem>
               <MenuItem value="teacher">Teacher</MenuItem>
               <MenuItem value="engineer">Engineer</MenuItem>
               <MenuItem value="other">Other</MenuItem>
             </Select>
+            <Typography variant="caption" color="error">{error.occupation}</Typography>
           </FormControl>
         </Grid>
         {select.occupation === "other" && (
@@ -143,6 +222,8 @@ export default function Enquiryform() {
               onChange={(e: any) => handleChange(e)}
               label="Your Occupation"
               fullWidth
+              error={!!error.otherOccupation}
+              helperText={error.otherOccupation}
             />
           </Grid>
         )}
@@ -156,12 +237,14 @@ export default function Enquiryform() {
               label="Enquiry Type"
               onChange={handleChange}
               fullWidth
+              error={!!error.enquiryType}
             >
               <MenuItem value="buy">Buy</MenuItem>
               <MenuItem value="rent">Rent</MenuItem>
               <MenuItem value="complain">Complain</MenuItem>
               <MenuItem value="suggestion">Suggestion</MenuItem>
             </Select>
+            <Typography variant="caption" color="error">{error.enquiryType}</Typography>
           </FormControl>
         </Grid>
 
@@ -177,11 +260,12 @@ export default function Enquiryform() {
             multiline
             rows={8}
             fullWidth
+            error={!!error.enquiryDetails}
+            helperText={error.enquiryDetails}
           />
         </Grid>
         <Grid size={{ xs: 12, sm: 12, md: 12 }}>
           <Button
-            // onClick={handleSubmit}
             type="submit"
             variant="contained"
             size="large"
@@ -198,6 +282,8 @@ export default function Enquiryform() {
           </Button>
         </Grid>
       </Grid>
+      </form>
     </Grid>
   );
 }
+ 
